@@ -10,28 +10,33 @@ export const Register = (props) => {
   };
   return (
     <Fragment>
-      <form>
-        <label htmlFor="name">Full Name</label>
-        <input value={name} type="text" id="name" name="name"/>
-        <label htmlFor="email">email</label>
-        <input
-          value={email}
-          type="email"
-          id="email"
-          name="email"
-          placeholder="youremail@gmail.com"
-        />
-        <label htmlFor="password">password</label>
-        <input
-          value={pass}
-          type="password"
-          placeholder="********"
-          id="password"
-          name="password"
-        />
-        <button type="submit">Log In</button>
-      </form>
-      <button onClick={()=>props.onFormSwitch('login')}>Already have an account? Login here.</button>
+      <div className="auth-form-container">
+      <h2>Register</h2>
+        <form className="register-form">
+          <label htmlFor="name">Full Name</label>
+          <input value={name} type="text" id="name" name="name" />
+          <label htmlFor="email">email</label>
+          <input
+            value={email}
+            type="email"
+            id="email"
+            name="email"
+            placeholder="youremail@gmail.com"
+          />
+          <label htmlFor="password">password</label>
+          <input
+            value={pass}
+            type="password"
+            placeholder="********"
+            id="password"
+            name="password"
+          />
+          <button type="submit">Log In</button>
+        </form>
+        <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
+          Already have an account? Login here.
+        </button>
+      </div>
     </Fragment>
   );
 };
